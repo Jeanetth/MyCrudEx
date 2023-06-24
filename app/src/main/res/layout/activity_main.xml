@@ -48,12 +48,13 @@
             android:text="Modificar contacto"/>
 
         <androidx.appcompat.widget.AppCompatButton
-            android:background="@drawable/main_activity_button"
+            android:id="@+id/lista_contactos"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:textColor="@color/dark_blue"
-            android:text="Listar contactos"/>
+            android:background="@drawable/main_activity_button"
+            android:text="Listar contactos"
+            android:textColor="@color/dark_blue" />
 
     </LinearLayout>
 
