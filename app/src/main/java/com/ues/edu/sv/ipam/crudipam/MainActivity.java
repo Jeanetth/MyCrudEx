@@ -25,5 +25,17 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Button btnModificar = findViewById(R.id.btnModificar);
+        btnModificar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Abrir la actividad de modificar contactos
+                Intent actividad = new Intent(MainActivity.this, ModificarContactos.class);
+                startActivity(actividad);
+            }
+        });
+
+
     }
 }
