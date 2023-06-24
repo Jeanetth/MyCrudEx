@@ -29,7 +29,7 @@ public class ModificarContactos extends AppCompatActivity {
         buttonReturn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ModificarContactos.this, MainActivity.class );
+                Intent intent = new Intent(ModificarContactos.this, ListaContactos.class );
                 startActivity(intent);
             }
         });

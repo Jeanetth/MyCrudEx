@@ -24,14 +24,7 @@
             android:layout_height="wrap_content"
             android:text="Modificar" />
 
-        <Button
-            android:id="@+id/eliminarButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:text="Eliminar"
-            android:textColorHighlight="#CD2424"
-            android:textColorLink="#CC3737" /> <!-- Agrega un espacio pequeño de 8dp -->
+        <!-- Agrega un espacio pequeño de 8dp -->
 
     </LinearLayout>
 
