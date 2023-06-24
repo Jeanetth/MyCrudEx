@@ -61,13 +61,15 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:text="Nombre:"/>
+
             <EditText
+                android:id="@+id/nombreInput"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:gravity="center_vertical"
-                android:layout_weight="1"
                 android:layout_marginBottom="10dp"
-                android:textColor="@color/white"/>
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:textColor="@color/white" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -135,13 +137,15 @@
                 android:layout_weight="1"
                 android:textColor="@color/white"
                 android:text="Teléfono:"/>
+
             <EditText
+                android:id="@+id/telefonoInput"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:gravity="bottom"
-                android:layout_weight="1"
                 android:layout_marginBottom="10dp"
-                android:textColor="@color/white"/>
+                android:layout_weight="1"
+                android:gravity="bottom"
+                android:textColor="@color/white" />
 
             <LinearLayout
                 android:layout_width="match_parent"

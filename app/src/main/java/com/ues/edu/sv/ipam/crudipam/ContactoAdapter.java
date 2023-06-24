@@ -1,8 +1,10 @@
 package com.ues.edu.sv.ipam.crudipam;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -30,7 +32,22 @@ public class ContactoAdapter extends RecyclerView.Adapter<ContactoAdapter.Contac
     public void onBindViewHolder(@NonNull ContactoViewHolder holder, int position) {
         Contactos contacto = contactosList.get(position);
         holder.nombreTextView.setText(contacto.getNombre());
-        holder.telefonoTextView.setText(contacto.getTelefono());
+
+        holder.modificarButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Aquí puedes obtener el objeto Contactos correspondiente a este elemento de la lista
+                Contactos contactoSeleccionado = contactosList.get(holder.getAdapterPosition());
+
+                // Aquí puedes crear un Intent para abrir la nueva actividad (layout) y pasar los datos del contacto
+                Intent intent = new Intent(v.getContext(), ModificarContactos.class);
+                intent.putExtra("nombre", contactoSeleccionado.getNombre());
+                intent.putExtra("telefono", contactoSeleccionado.getTelefono());
+                // Puedes agregar más datos del contacto si es necesario
+
+                v.getContext().startActivity(intent); // Inicia la nueva actividad
+            }
+        });
     }
 
     @Override
@@ -40,12 +57,12 @@ public class ContactoAdapter extends RecyclerView.Adapter<ContactoAdapter.Contac
 
     public class ContactoViewHolder extends RecyclerView.ViewHolder {
         TextView nombreTextView;
-        TextView telefonoTextView;
+        Button modificarButton;
 
         public ContactoViewHolder(@NonNull View itemView) {
             super(itemView);
             nombreTextView = itemView.findViewById(R.id.nombreTextView);
-            telefonoTextView = itemView.findViewById(R.id.telefonoTextView);
+            modificarButton = itemView.findViewById(R.id.modificar_button);
         }
     }
 }
