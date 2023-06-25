@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -39,9 +40,11 @@ public class ContactoAdapter extends RecyclerView.Adapter<ContactoAdapter.Contac
                 // Aquí puedes obtener el objeto Contactos correspondiente a este elemento de la lista
                 Contactos contactoSeleccionado = contactosList.get(holder.getAdapterPosition());
 
+
                 // Aquí puedes crear un Intent para abrir la nueva actividad (layout) y pasar los datos del contacto
                 Intent intent = new Intent(v.getContext(), ModificarContactos.class);
                 intent.putExtra("nombre", contactoSeleccionado.getNombre());
+                intent.putExtra("id", contactoSeleccionado.getID());
                 intent.putExtra("telefono", contactoSeleccionado.getTelefono());
                 // Puedes agregar más datos del contacto si es necesario
 

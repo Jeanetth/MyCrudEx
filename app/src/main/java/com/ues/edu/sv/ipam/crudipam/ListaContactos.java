@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.ues.edu.sv.ipam.crudipam.sqlLite.CapaBaseDatos;
 import com.ues.edu.sv.ipam.crudipam.sqlLite.Contactos;
 
 import java.util.ArrayList;
@@ -30,18 +31,8 @@ public class ListaContactos extends AppCompatActivity {
             }
         });
         List<Contactos> contactosList = new ArrayList<>();
-        Contactos contacto1 = new Contactos(1, "Juan", "123456789");
-        Contactos contacto2 = new Contactos(2, "Ricardo", "987654321");
-        Contactos contacto3 = new Contactos(3, "Godolfredo", "456789123");
-        Contactos contacto4 = new Contactos(4, "Enrique", "456789123");
-        Contactos contacto5 = new Contactos(4, "Enrique", "456789123");
-
-
-        contactosList.add(contacto1);
-        contactosList.add(contacto2);
-        contactosList.add(contacto3);
-        contactosList.add(contacto4);
-        contactosList.add(contacto5);
+        CapaBaseDatos listaContactos = new CapaBaseDatos(getApplicationContext());
+        contactosList= listaContactos.getContactos();
 
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this)); // Puedes usar cualquier otro LayoutManager según tus necesidades

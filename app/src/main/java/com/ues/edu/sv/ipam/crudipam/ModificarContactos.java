@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class ModificarContactos extends AppCompatActivity {
     Button buttonReturn;
@@ -17,8 +18,8 @@ public class ModificarContactos extends AppCompatActivity {
 
         Intent intent = getIntent();
         String nombre = intent.getStringExtra("nombre");
+        String ID = intent.getStringExtra("id");
         String telefono = intent.getStringExtra("telefono");
-
         EditText nombreEditText = findViewById(R.id.nombreInput);
         EditText telefonoEditText = findViewById(R.id.telefonoInput);
 

@@ -51,7 +51,7 @@ public class CapaBaseDatos extends SQLiteOpenHelper {
     }
 
     // Para agregar un nuevo registro
-    void addContacto(Contactos contact) {
+     public void addContacto(Contactos contact) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
