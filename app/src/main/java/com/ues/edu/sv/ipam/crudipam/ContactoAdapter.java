@@ -43,9 +43,8 @@ public class ContactoAdapter extends RecyclerView.Adapter<ContactoAdapter.Contac
 
                 // Aquí puedes crear un Intent para abrir la nueva actividad (layout) y pasar los datos del contacto
                 Intent intent = new Intent(v.getContext(), ModificarContactos.class);
-                intent.putExtra("nombre", contactoSeleccionado.getNombre());
-                intent.putExtra("id", contactoSeleccionado.getID());
-                intent.putExtra("telefono", contactoSeleccionado.getTelefono());
+
+                intent.putExtra("contactoSeleccionado", contactoSeleccionado);
                 // Puedes agregar más datos del contacto si es necesario
 
                 v.getContext().startActivity(intent); // Inicia la nueva actividad

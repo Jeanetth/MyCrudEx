@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import com.ues.edu.sv.ipam.crudipam.sqlLite.Contactos;
 
 public class ModificarContactos extends AppCompatActivity {
     Button buttonReturn;
@@ -15,16 +16,13 @@ public class ModificarContactos extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_modificar_contactos);
-
         Intent intent = getIntent();
-        String nombre = intent.getStringExtra("nombre");
-        String ID = intent.getStringExtra("id");
-        String telefono = intent.getStringExtra("telefono");
+        Contactos contactoSeleccionado = (Contactos) intent.getSerializableExtra("contactoSeleccionado");
         EditText nombreEditText = findViewById(R.id.nombreInput);
         EditText telefonoEditText = findViewById(R.id.telefonoInput);
 
-        nombreEditText.setText(nombre);
-        telefonoEditText.setText(telefono);
+        nombreEditText.setText(contactoSeleccionado.getNombre());
+        telefonoEditText.setText(contactoSeleccionado.getTelefono());
 
         buttonReturn = findViewById(R.id.btn_return);
         buttonReturn.setOnClickListener(new View.OnClickListener() {
