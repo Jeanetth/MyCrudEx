@@ -21,7 +21,7 @@ public class ModificarContactos extends AppCompatActivity {
         EditText nombreEditText = findViewById(R.id.nombreInput);
         EditText telefonoEditText = findViewById(R.id.telefonoInput);
 
-        nombreEditText.setText(contactoSeleccionado.getNombre());
+        nombreEditText.setText(String.valueOf(contactoSeleccionado.getID()));
         telefonoEditText.setText(contactoSeleccionado.getTelefono());
 
         buttonReturn = findViewById(R.id.btn_return);
