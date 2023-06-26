@@ -13,14 +13,17 @@ import com.ues.edu.sv.ipam.crudipam.sqlLite.CapaBaseDatos;
 import com.ues.edu.sv.ipam.crudipam.sqlLite.Contactos;
 
 public class ModificarContactos extends AppCompatActivity {
+
+    Button buttonReturn;
+    Button buttonActualizar;
+    Button buttonEliminar;
     String nombre;
     String telefono;
     String apellido;
     String edad;
     String domicilio;
     String correo;
-    Button buttonReturn;
-    Button buttonActualizar;
+
 
     EditText editNombre;
     EditText editTelefono;
@@ -86,6 +89,21 @@ public class ModificarContactos extends AppCompatActivity {
 
             }
         });
+
+        buttonEliminar = findViewById(R.id.eliminar);
+        buttonEliminar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+
+                Contactos contacto = new Contactos();
+                CapaBaseDatos datos = new CapaBaseDatos(getApplicationContext());
+                datos.deleteContacto(contactoSeleccionado);
+                Intent intent = new Intent(ModificarContactos.this, ListaContactos.class);
+                startActivity(intent);
+            }
+
+        });
+
     }
 
 

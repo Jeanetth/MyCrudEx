@@ -80,6 +80,7 @@ public class AgregarContactos extends AppCompatActivity {
                 datos.addContacto(contacto);
                 Toast.makeText(getApplicationContext(),"contacto agregado", Toast.LENGTH_SHORT).show();
 
+
                 Intent intent = new Intent(AgregarContactos.this, ListaContactos.class );
                 startActivity(intent);
             }
