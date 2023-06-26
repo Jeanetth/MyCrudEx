@@ -18,8 +18,16 @@ public class AgregarContactos extends AppCompatActivity {
 
     String nombre;
     String telefono;
+    String apellido;
+    /*String edad;*/
+    String domicilio;
+    String correo;
     EditText editNombre;
     EditText editTelefono;
+    EditText editApellido;
+    /*EditText editEdad;*/
+    EditText editDomicilio;
+    EditText editCorreo;
 
     Button agregar;
     Button buttonReturn;
@@ -28,11 +36,17 @@ public class AgregarContactos extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_agregar_contactos);
-
+        agregar=findViewById(R.id.bottonAdd);
         buttonReturn = findViewById(R.id.btn_return);
         editNombre = findViewById(R.id.addName);
         editTelefono = findViewById(R.id.addNumber);
-        agregar=findViewById(R.id.bottonAdd);
+        editApellido = findViewById(R.id.addLastName);
+        editDomicilio = findViewById(R.id.addAdress);
+        /*editEdad = findViewById(R.id.addAge)*/
+        editCorreo = findViewById(R.id.addAdress);
+
+
+
 
 
         buttonReturn.setOnClickListener(new View.OnClickListener() {

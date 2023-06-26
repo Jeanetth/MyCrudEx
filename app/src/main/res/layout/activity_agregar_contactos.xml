@@ -49,18 +49,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="Agregar contacto"
                 android:gravity="center"
+                android:text="Agregar contacto"
                 android:textColor="@color/light_blue"
                 android:textSize="25sp" />
 
             <TextView
                 android:layout_width="match_parent"
-                android:textColor="@color/white"
-                android:gravity="bottom"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="Nombre:"/>
+                android:gravity="bottom"
+                android:text="Nombre:"
+                android:textColor="@color/white" />
 
             <EditText
                 android:id="@+id/addName"
@@ -78,13 +78,15 @@
                 android:layout_weight="1"
                 android:textColor="@color/white"
                 android:text="Apellidos:"/>
+
             <EditText
+                android:id="@+id/addLastName"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_marginBottom="10dp"
-                android:gravity="center_vertical"
                 android:layout_weight="1"
-                android:textColor="@color/white"/>
+                android:gravity="center_vertical"
+                android:textColor="@color/white" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -95,12 +97,13 @@
                 android:text="Domicilio:"/>
 
             <EditText
+                android:id="@+id/addAdress"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_marginBottom="10dp"
-                android:gravity="center_vertical"
                 android:layout_weight="1"
-                android:textColor="@color/white"/>
+                android:gravity="center_vertical"
+                android:textColor="@color/white" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -109,14 +112,16 @@
                 android:layout_weight="1"
                 android:textColor="@color/white"
                 android:text="Correo electrónico:"/>
+
             <EditText
+                android:id="@+id/addEmail"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_marginBottom="10dp"
-                android:gravity="center_vertical"
                 android:layout_weight="1"
-                android:textColor="@color/white"
-                android:inputType="textEmailAddress" />
+                android:gravity="center_vertical"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/white" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -134,7 +139,7 @@
                 android:layout_weight="1"
                 android:gravity="bottom"
                 android:textColor="@color/white"
-                android:inputType="number" />
+                android:inputType="number"/>
 
             <LinearLayout
                 android:layout_width="match_parent"

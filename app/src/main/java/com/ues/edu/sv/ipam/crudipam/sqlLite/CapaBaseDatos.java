@@ -26,6 +26,10 @@ public class CapaBaseDatos extends SQLiteOpenHelper {
     private static final String ID_CONTACTO = "id";
     private static final String NOMBRE_CONTACTO = "nombre";
     private static final String TELEFONO_CONTACTO = "telefono";
+    private static final String APELLIDO_CONTACTO = "apellido";
+    private static final String EDAD_CONTACTO = "edad";
+    private static final String DOMICILIO_CONTACTO = "domicilio";
+    private static final String CORREO_CONTACTO = "correo";
 
     public CapaBaseDatos(Context context) {
         super(context, NOMBRE_BASEDATOS, null, VERSION_BASEDATOS);
@@ -35,8 +39,13 @@ public class CapaBaseDatos extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String CREATE_CONTACTS_TABLE = "CREATE TABLE " + TABLA_CONTACTOS + "("
-                + ID_CONTACTO + " INTEGER PRIMARY KEY," + NOMBRE_CONTACTO + " TEXT,"
-                + TELEFONO_CONTACTO + " TEXT" + ")";
+                + ID_CONTACTO + " INTEGER PRIMARY KEY,"
+                + NOMBRE_CONTACTO + " TEXT,"
+                + TELEFONO_CONTACTO + " TEXT,"
+                + APELLIDO_CONTACTO + " TEXT,"
+                + EDAD_CONTACTO + " TEXT,"
+                + DOMICILIO_CONTACTO + " TEXT,"
+                + CORREO_CONTACTO + " TEXT" +")";
         db.execSQL(CREATE_CONTACTS_TABLE);
 
     }
@@ -57,6 +66,12 @@ public class CapaBaseDatos extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(NOMBRE_CONTACTO, contact.getNombre());
         values.put(TELEFONO_CONTACTO, contact.getTelefono());
+        values.put(APELLIDO_CONTACTO, contact.getApellido());
+        values.put(EDAD_CONTACTO,contact.getEdad());
+        values.put(DOMICILIO_CONTACTO,contact.getDomicilio());
+        values.put(CORREO_CONTACTO,contact.getCorreo());
+
+
 
 
         db.insert(TABLA_CONTACTOS, null, values);
@@ -87,7 +102,13 @@ public class CapaBaseDatos extends SQLiteOpenHelper {
 
         List<Contactos> contactList = new ArrayList<Contactos>();
 
-        String[] campos = new String[] {ID_CONTACTO,NOMBRE_CONTACTO, TELEFONO_CONTACTO};
+        String[] campos = new String[] {ID_CONTACTO,
+                                        NOMBRE_CONTACTO,
+                                        TELEFONO_CONTACTO,
+                                        APELLIDO_CONTACTO,
+                                        EDAD_CONTACTO,
+                                        DOMICILIO_CONTACTO,
+                                        CORREO_CONTACTO};
         SQLiteDatabase db = this.getWritableDatabase();
 
         Cursor cursor = db.query(TABLA_CONTACTOS, campos, null, null, null, null, null);
@@ -98,6 +119,10 @@ public class CapaBaseDatos extends SQLiteOpenHelper {
                 contact.setID(Integer.parseInt(cursor.getString(0)));
                 contact.setNombre(cursor.getString(1));
                 contact.setTelefono(cursor.getString(2));
+                contact.setApellido(cursor.getString(3));
+                contact.setEdad(cursor.getString(4));
+                contact.setDomicilio(cursor.getString(5));
+                contact.setCorreo(cursor.getString(6));
                 contactList.add(contact);
             } while (cursor.moveToNext());
         }
@@ -114,6 +139,10 @@ public class CapaBaseDatos extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(NOMBRE_CONTACTO, contact.getNombre());
         values.put(TELEFONO_CONTACTO, contact.getTelefono());
+        values.put(APELLIDO_CONTACTO, contact.getApellido());
+        values.put(EDAD_CONTACTO, contact.getEdad());
+        values.put(DOMICILIO_CONTACTO, contact.getDomicilio());
+        values.put(CORREO_CONTACTO, contact.getCorreo());
 
 
         return db.update(TABLA_CONTACTOS, values, ID_CONTACTO + " = ?",idContacto );

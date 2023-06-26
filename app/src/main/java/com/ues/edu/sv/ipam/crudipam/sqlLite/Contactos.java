@@ -13,7 +13,42 @@ public class Contactos implements Serializable {
     private int ID;
     private String nombre;
     private String telefono;
+    private String apellido;
+    private String correo;
+    private String edad;
+    private String domicilio;
 
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+
+    public String getEdad() {
+        return edad;
+    }
+
+    public void setEdad(String edad) {
+        this.edad = edad;
+    }
+
+    public String getDomicilio() {
+        return domicilio;
+    }
+
+    public void setDomicilio(String domicilio) {
+        this.domicilio = domicilio;
+    }
 
     public int getID() {
         return ID;
@@ -53,4 +88,5 @@ public class Contactos implements Serializable {
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
+
 }

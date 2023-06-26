@@ -78,13 +78,15 @@
                 android:layout_weight="1"
                 android:textColor="@color/white"
                 android:text="Apellidos:"/>
+
             <EditText
+                android:id="@+id/apellidoInput"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_marginBottom="10dp"
-                android:gravity="center_vertical"
                 android:layout_weight="1"
-                android:textColor="@color/white"/>
+                android:gravity="center_vertical"
+                android:textColor="@color/white" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -93,13 +95,15 @@
                 android:layout_weight="1"
                 android:textColor="@color/white"
                 android:text="Edad:"/>
+
             <EditText
+                android:id="@+id/edadInput"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_marginBottom="10dp"
-                android:gravity="center_vertical"
                 android:layout_weight="1"
-                android:textColor="@color/white"/>
+                android:gravity="center_vertical"
+                android:textColor="@color/white" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -107,13 +111,15 @@
                 android:layout_weight="1"
                 android:textColor="@color/white"
                 android:text="Domicilio:"/>
+
             <EditText
+                android:id="@+id/domicilioInput"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_marginBottom="10dp"
-                android:gravity="center_vertical"
                 android:layout_weight="1"
-                android:textColor="@color/white"/>
+                android:gravity="center_vertical"
+                android:textColor="@color/white" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -122,13 +128,15 @@
                 android:layout_weight="1"
                 android:textColor="@color/white"
                 android:text="Correo electrónico:"/>
+
             <EditText
+                android:id="@+id/correoInput"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_marginBottom="10dp"
-                android:gravity="center_vertical"
                 android:layout_weight="1"
-                android:textColor="@color/white"/>
+                android:gravity="center_vertical"
+                android:textColor="@color/white" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -154,17 +162,20 @@
                 android:gravity="center_horizontal">
 
                 <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/actualizar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/main_activity_button"
-                    android:text="Actualizar"/>
+                    android:text="Actualizar" />
+
                 <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/eliminar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/main_activity_button"
-                    android:text="Eliminar"
                     android:layout_marginStart="16dp"
-                    android:layout_marginLeft="16dp" />
+                    android:layout_marginLeft="16dp"
+                    android:background="@drawable/main_activity_button"
+                    android:text="Eliminar" />
 
             </LinearLayout>
 
