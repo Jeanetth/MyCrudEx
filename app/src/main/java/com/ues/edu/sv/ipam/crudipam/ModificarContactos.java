@@ -60,17 +60,18 @@ public class ModificarContactos extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         buttonActualizar = findViewById(R.id.actualizar);
         buttonActualizar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 nombre = editNombre.getText().toString();
                 telefono = editTelefono.getText().toString();
                 apellido = editApellido.getText().toString();
                 domicilio = editDomicilio.getText().toString();
                 edad= editEdad.getText().toString();
-                correo=editCorreo.getText().toString();
-
+                correo=editCorreo.getText().toString();if (!nombre.isEmpty() && !apellido.isEmpty() && !domicilio.isEmpty() && !edad.isEmpty() && !correo.isEmpty() && !telefono.isEmpty() ) {
                 Contactos contacto = new Contactos();
                 CapaBaseDatos datos = new CapaBaseDatos(getApplicationContext());
 
@@ -86,8 +87,11 @@ public class ModificarContactos extends AppCompatActivity {
 
                 Intent intent = new Intent(ModificarContactos.this, ListaContactos.class );
                 startActivity(intent);
-
+                }else{
+                    Toast.makeText(getApplicationContext(), "LLenar todos los campos", Toast.LENGTH_SHORT).show();
+                }
             }
+
         });
 
         buttonEliminar = findViewById(R.id.eliminar);

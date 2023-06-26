@@ -61,30 +61,33 @@ public class AgregarContactos extends AppCompatActivity {
         agregar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                 nombre = editNombre.getText().toString();
-                 telefono = editTelefono.getText().toString();
-                 apellido = editApellido.getText().toString();
-                 domicilio = editDomicilio.getText().toString();
-                 edad= editEdad.getText().toString();
-                correo=editCorreo.getText().toString();
+                nombre = editNombre.getText().toString();
+                telefono = editTelefono.getText().toString();
+                apellido = editApellido.getText().toString();
+                domicilio = editDomicilio.getText().toString();
+                edad = editEdad.getText().toString();
+                correo = editCorreo.getText().toString();
+                if (!nombre.isEmpty() && !apellido.isEmpty() && !domicilio.isEmpty() && !edad.isEmpty() && !correo.isEmpty() && !telefono.isEmpty() ) {
+                    Contactos contacto = new Contactos();
+                    CapaBaseDatos datos = new CapaBaseDatos(getApplicationContext());
 
-                 Contactos contacto = new Contactos();
-                 CapaBaseDatos datos = new CapaBaseDatos(getApplicationContext());
-
-                contacto.setNombre(nombre);
-                contacto.setTelefono(telefono);
-                contacto.setCorreo(correo);
-                contacto.setEdad(edad);
-                contacto.setDomicilio(domicilio);
-                contacto.setApellido(apellido);
-                datos.addContacto(contacto);
-                Toast.makeText(getApplicationContext(),"contacto agregado", Toast.LENGTH_SHORT).show();
+                    contacto.setNombre(nombre);
+                    contacto.setTelefono(telefono);
+                    contacto.setCorreo(correo);
+                    contacto.setEdad(edad);
+                    contacto.setDomicilio(domicilio);
+                    contacto.setApellido(apellido);
+                    datos.addContacto(contacto);
+                    Toast.makeText(getApplicationContext(),"Contacto Agregado", Toast.LENGTH_SHORT).show();
 
 
-                Intent intent = new Intent(AgregarContactos.this, ListaContactos.class );
-                startActivity(intent);
+                    Intent intent = new Intent(AgregarContactos.this, ListaContactos.class);
+                    startActivity(intent);
+                }else{
+                    Toast.makeText(getApplicationContext(), "LLenar todos los campos", Toast.LENGTH_SHORT).show();
+                }
+
             }
-
         });
     }
 }
