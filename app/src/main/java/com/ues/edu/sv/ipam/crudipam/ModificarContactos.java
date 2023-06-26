@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -71,7 +72,32 @@ public class ModificarContactos extends AppCompatActivity {
                 apellido = editApellido.getText().toString();
                 domicilio = editDomicilio.getText().toString();
                 edad= editEdad.getText().toString();
-                correo=editCorreo.getText().toString();if (!nombre.isEmpty() && !apellido.isEmpty() && !domicilio.isEmpty() && !edad.isEmpty() && !correo.isEmpty() && !telefono.isEmpty() ) {
+                correo=editCorreo.getText().toString();
+
+                Boolean vacio = true;
+
+                if(
+                        !nombre.isEmpty() &&
+                        !apellido.isEmpty() &&
+                        !domicilio.isEmpty() &&
+                        !edad.isEmpty() && !correo.isEmpty() &&
+                        !telefono.isEmpty()
+                ){
+                    vacio = false;
+                }
+
+                int edadInt = -1;
+                try {
+                    edadInt = Integer.parseInt(edad);
+                } catch (NumberFormatException e) {
+                    editEdad.setError("Ingrese una edad numérica válida");
+                }
+
+                String regex = "^[+]?[0-9]{8,13}$";
+
+
+
+                if (vacio == false && Patterns.EMAIL_ADDRESS.matcher(correo).matches() && !(edadInt < 0 || edadInt > 120) &&  telefono.matches(regex)) {
                 Contactos contacto = new Contactos();
                 CapaBaseDatos datos = new CapaBaseDatos(getApplicationContext());
 
@@ -87,8 +113,49 @@ public class ModificarContactos extends AppCompatActivity {
 
                 Intent intent = new Intent(ModificarContactos.this, ListaContactos.class );
                 startActivity(intent);
+                }else if(!Patterns.EMAIL_ADDRESS.matcher(correo).matches() && vacio == false &&
+                        !(edadInt < 0 || edadInt > 120) &&  telefono.matches(regex)){
+
+                    editCorreo.setError("Ingrese un correo electrónico válido");
+
+                } else if( (edadInt < 0 || edadInt > 120) && Patterns.EMAIL_ADDRESS.matcher(correo).matches() &&
+                        vacio == false && telefono.matches(regex)){
+
+                    editEdad.setError("Ingrese una edad válida");
+
+                } else if(!telefono.matches(regex) && !(edadInt < 0 || edadInt > 120) && Patterns.EMAIL_ADDRESS.matcher(correo).matches() &&
+                        vacio == false) {
+
+                    editTelefono.setError("Ingrese un número de teléfono válido");
+
                 }else{
-                    Toast.makeText(getApplicationContext(), "LLenar todos los campos", Toast.LENGTH_SHORT).show();
+                    if (nombre.isEmpty()) {
+                        editNombre.setError("Debe llenar este campo");
+
+                    }
+
+                    if (apellido.isEmpty()) {
+                        editApellido.setError("Debe llenar este campo");
+
+                    }
+
+                    if (telefono.isEmpty()) {
+                        editTelefono.setError("Debe llenar este campo");
+                    }
+
+                    if (correo.isEmpty()) {
+                        editCorreo.setError("Debe llenar este campo");
+
+                    }
+
+                    if (domicilio.isEmpty()) {
+                        editDomicilio.setError("Debe llenar este campo");
+                    }
+
+                    if (edad.isEmpty()) {
+                        editEdad.setError("Debe llenar este campo");
+                    }
+
                 }
             }
 
