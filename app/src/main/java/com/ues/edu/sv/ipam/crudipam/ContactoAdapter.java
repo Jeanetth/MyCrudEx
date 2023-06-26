@@ -50,6 +50,25 @@ public class ContactoAdapter extends RecyclerView.Adapter<ContactoAdapter.Contac
                 v.getContext().startActivity(intent); // Inicia la nueva actividad
             }
         });
+
+        holder.nombreTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Aquí puedes obtener el objeto Contactos correspondiente a este elemento de la lista
+                Contactos contactoSeleccionado = contactosList.get(holder.getAdapterPosition());
+
+
+                // Aquí puedes crear un Intent para abrir la nueva actividad (layout) y pasar los datos del contacto
+                Intent intent = new Intent(v.getContext(), VerContacto.class);
+
+                intent.putExtra("contactoSeleccionado", contactoSeleccionado);
+                // Puedes agregar más datos del contacto si es necesario
+
+                v.getContext().startActivity(intent); // Inicia la nueva actividad
+            }
+        });
+
+
     }
 
     @Override

@@ -17,6 +17,9 @@
         android:theme="@style/Theme.CrudIpam"
         tools:targetApi="31">
         <activity
+            android:name=".VerContacto"
+            android:exported="false" />
+        <activity
             android:name=".ListaContactos"
             android:exported="false" />
         <activity

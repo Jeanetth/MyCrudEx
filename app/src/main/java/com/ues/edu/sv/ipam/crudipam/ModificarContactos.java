@@ -83,7 +83,7 @@ public class ModificarContactos extends AppCompatActivity {
                 contacto.setApellido(apellido);
                 contacto.setID(contactoSeleccionado.getID());
                 datos.updateContacto(contacto);
-                Toast.makeText(getApplicationContext(),"contacto agregado", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"contacto Actulizado", Toast.LENGTH_SHORT).show();
 
                 Intent intent = new Intent(ModificarContactos.this, ListaContactos.class );
                 startActivity(intent);
@@ -102,6 +102,7 @@ public class ModificarContactos extends AppCompatActivity {
                 Contactos contacto = new Contactos();
                 CapaBaseDatos datos = new CapaBaseDatos(getApplicationContext());
                 datos.deleteContacto(contactoSeleccionado);
+                Toast.makeText(getApplicationContext(),"Contacto Elimanado", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(ModificarContactos.this, ListaContactos.class);
                 startActivity(intent);
             }
