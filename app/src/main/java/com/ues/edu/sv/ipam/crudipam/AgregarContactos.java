@@ -19,13 +19,13 @@ public class AgregarContactos extends AppCompatActivity {
     String nombre;
     String telefono;
     String apellido;
-    /*String edad;*/
+    String edad;
     String domicilio;
     String correo;
     EditText editNombre;
     EditText editTelefono;
     EditText editApellido;
-    /*EditText editEdad;*/
+    EditText editEdad;
     EditText editDomicilio;
     EditText editCorreo;
 
@@ -42,7 +42,7 @@ public class AgregarContactos extends AppCompatActivity {
         editTelefono = findViewById(R.id.addNumber);
         editApellido = findViewById(R.id.addLastName);
         editDomicilio = findViewById(R.id.addAdress);
-        /*editEdad = findViewById(R.id.addAge)*/
+        editEdad = findViewById(R.id.addAge);
         editCorreo = findViewById(R.id.addAdress);
 
 
@@ -65,7 +65,7 @@ public class AgregarContactos extends AppCompatActivity {
                  telefono = editTelefono.getText().toString();
                  apellido = editApellido.getText().toString();
                  domicilio = editDomicilio.getText().toString();
-                 /*edad= editEdad.getText().toString();*/
+                 edad= editEdad.getText().toString();
                 correo=editCorreo.getText().toString();
 
                  Contactos contacto = new Contactos();
@@ -74,7 +74,7 @@ public class AgregarContactos extends AppCompatActivity {
                 contacto.setNombre(nombre);
                 contacto.setTelefono(telefono);
                 contacto.setCorreo(correo);
-               /* contacto.setEdad(edad);*/
+                contacto.setEdad(edad);
                 contacto.setDomicilio(domicilio);
                 contacto.setApellido(apellido);
                 datos.addContacto(contacto);
