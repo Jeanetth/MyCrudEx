@@ -137,7 +137,8 @@
                 android:layout_marginBottom="10dp"
                 android:layout_weight="1"
                 android:gravity="center_vertical"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:inputType="textEmailAddress"/>
 
             <TextView
                 android:layout_width="match_parent"

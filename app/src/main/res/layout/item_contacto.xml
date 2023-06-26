@@ -22,9 +22,9 @@
             android:id="@+id/modificar_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Modificar" />
-
-        <!-- Agrega un espacio pequeño de 8dp -->
+            android:text="✏️"
+            android:layout_margin="8dp"
+            android:padding="8dp" />
 
     </LinearLayout>
 
