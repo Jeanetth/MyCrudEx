@@ -156,6 +156,23 @@ public class ModificarContactos extends AppCompatActivity {
                         editEdad.setError("Debe llenar este campo");
                     }
 
+                    if(!Patterns.EMAIL_ADDRESS.matcher(correo).matches() || (edadInt < 0 || edadInt > 120) ||  !telefono.matches(regex)){
+
+                        if(!Patterns.EMAIL_ADDRESS.matcher(correo).matches()){
+
+                            editCorreo.setError("Ingrese un correo electrónico válido");    }
+
+                        if((edadInt < 0 || edadInt > 120)){
+
+                            editEdad.setError("Ingrese una edad válida");    }
+
+                        if(!telefono.matches(regex)){
+
+                            editTelefono.setError("Ingrese un número de teléfono válido");    }
+
+                    }
+
+
                 }
             }
 
